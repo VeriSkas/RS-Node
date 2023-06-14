@@ -1,5 +1,11 @@
+import { env } from 'process';
+
 const parseEnv = () => {
-    // Write your code here 
+  for (var item in env) {
+    if (item.match(/^RSS_/)) {
+      console.log(`${item}=${env[item]}`);
+    }
+  }
 };
 
 parseEnv();
